@@ -1,6 +1,6 @@
 <?php
 require_once("Mysql.php");
-class Commande extends Mysql
+class Produit_Commande extends Mysql
 {
 	// Les attributs privés
 	private $_id_prod;
@@ -43,7 +43,7 @@ class Commande extends Mysql
 
 	public function liste()
 	{
-		$q = "SELECT * FROM produit_commande ORDER BY id";
+		$q = "SELECT * FROM produit_commande ORDER BY id_com";
 		$list_prod = array(); // Tableau VIDE
 		$res = $this->requete($q);
 		while($row = mysqli_fetch_array( $res)){

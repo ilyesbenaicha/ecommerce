@@ -33,10 +33,10 @@ class Commande extends Mysql
 		$prod = new Commande();
 		
 		$prod->_id 			= $row['id'];
-		$prod->_nom 	= $row['nom'];
+		$prod->_nom 		= $row['nom'];
 		$prod->_prenom 		= $row['prenom'];
 		$prod->_email		= $row['email'];
-		$prod->_adress	= $row['adress'];
+		$prod->_adress		= $row['adress'];
 		
 		return $prod;
 	}
@@ -51,10 +51,9 @@ class Commande extends Mysql
 			$prod = new Commande();
 
 		$prod->_id 			= $row['id'];
-		$prod->_nom 	= $row['nom'];
-		$prod->_prenom 		= $row['prenom'];
+		$prod->_nom 	    = $row['nom'];
 		$prod->_email		= $row['email'];
-		$prod->_adress	= $row['adress'];
+		$prod->_adress	    = $row['adress'];
 		
 			$list_prod[]=$prod;
 		}
@@ -64,10 +63,9 @@ class Commande extends Mysql
 	
 	public function ajouter()
 	{
-	    $q = "INSERT INTO Commande(id, nom, prenom,email, adress) VALUES 
-	  		(  null				, '$this->_nom'		,
-			  '$this->_prenom'	,'$this->_email','$this->_adress'
-			)";
+	    $q = "INSERT INTO commande(id,nom,email,adress) VALUES 
+	  		(  null	,'$this->_nom','$this->_email','$this->_adress'
+			);";
 		$res = $this->requete($q);
 		return mysqli_insert_id($this->get_cnx());
 	}
@@ -75,8 +73,7 @@ class Commande extends Mysql
 	public function modifier(){
 		$q = "UPDATE commande SET
 			  nom 	= '$this->_nom',
-			  prenom = '$this->_prenom',
-			  email = '$this->_email'
+			  email = '$this->_email',
 			  adress = '$this->_adress'
 			  
 			  WHERE id = '$this->_id' ";

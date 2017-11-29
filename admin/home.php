@@ -2,16 +2,21 @@
 require_once('header.php');
 require_once("verifier_access.php");
 require_once("../classes/Produit.php");
-require_once("../classes/Promo.php");
+
+require_once("../classes/Commande.php");
 $id_page = "dashboard";
 $i=0;
 $x=0;
+$y=0;
 $prod = new Produit();
-$pro = new Promo();  
+$cmd = new Commande();
+//$pro = new Promo();  
 $liste = $prod->liste();
-$lp =$pro->liste();
+//$lp =$pro->liste();
+$lc=$cmd->liste();
 foreach($liste as $data ){ $i++;}
-foreach ($lp as $key => $value) {$x++;}
+//foreach ($lp as $key => $value) {$x++;}
+foreach ($lc as $key => $value) {$y++;}
 ?>
 <!DOCTYPE html>
     <head>
@@ -30,9 +35,9 @@ foreach ($lp as $key => $value) {$x++;}
 
     <div class="jumbotron">   
         
-        Nombre des commandes : 999 <br/>
+        Nombre des commandes :<?php echo $y ?> <br/>
         Nombre des produits :<?php echo $i ?><br/>
-        Nombre des Promos : <?php echo $x ?>
+        
     </div>
 
 <hr>

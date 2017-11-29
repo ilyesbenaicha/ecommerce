@@ -53,7 +53,7 @@ if( !empty($id) ) {
           foreach($liste as $data )
           {
            ?>
-            <option value=' <?php echo $data->_id ?>'>  <?php echo  $data->_libelle ?></option> <?php } ?>
+            <option value=' <?php echo $data->_id ?>'  <?php if (@$data->_id==@$prod->_id_categorie)  echo "selected";?>>  <?php echo  $data->_libelle ?></option> <?php } ?>
             
           </select>
          <!-- <input required type="text" name="id_categorie" id="id_categorie" validate="required" value="<?php echo @($prod->_id_categorie); ?>" /> -->

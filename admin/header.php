@@ -19,8 +19,8 @@
 					</a>
 				</li>
 				<li>
-					<a href="promos.php">
-						<span class="glyphicon glyphicon-camera"> </span> Promos
+					<a href="commande_liste.php">
+						<span class="glyphicon glyphicon-flag"> </span> Commandes
 					</a>
 				</li>
 			</ul>

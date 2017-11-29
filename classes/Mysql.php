@@ -4,7 +4,7 @@ class Mysql
 	private $_serveur = "127.0.0.1";
 	private $_login = "root";
 	private $_mdp	= "";
-	private $_bdd	= "affable_bean_g2";
+	private $_bdd	= "affable_beans_v1";
 	private $_cnx;
 
 	public function get_cnx()
